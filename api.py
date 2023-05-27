@@ -11,6 +11,7 @@ extractor = URLExtract()
 
 @app.get("/api/v1/list")
 def List():
+   print("Hello")
    return FileResponse("req.txt", media_type='text/csv', filename="UUID_List.csv")
 
 @app.post("/api/v1/sms_recive")
@@ -31,7 +32,7 @@ async def receive_sms(request: Request):
         clf = pickle.load(f)
 
 # Load the vectorizer
-    with open('D:/App/api/ML/count_vectorizer.pkl', 'rb') as f:
+    with open('C:/Users/imsan/Projects/Git/api/ML/count_vectorizer.pkl', 'rb') as f:
         vectorizer = pickle.load(f)
 
     translator=Translator()
